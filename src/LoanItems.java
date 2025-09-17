@@ -17,11 +17,10 @@ public class LoanItems {
     public void setTitle(String title) {
         this.title = title;
     }
-
     public void setType(String type){
         this.type = type;
     }
-
+    //toString metode til at vise title og type på vores item
     @Override
     public String toString(){
         return getTitle() + " " + "(" + getType() + ")";
