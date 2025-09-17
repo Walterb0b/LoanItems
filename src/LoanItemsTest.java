@@ -7,6 +7,8 @@ public class LoanItemsTest {
     }
     //Metode til vores loan items
     public static void LoanItems() {
+        System.out.println("Hello and welcome to the LoanShark!!!");
+        System.out.println("-------------------------------------");
         Scanner sc = new Scanner(System.in);
         int numberOfItems; //Integer til at bestemme antallet af items brugeren vil låne
 
