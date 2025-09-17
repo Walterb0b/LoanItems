@@ -7,7 +7,7 @@ public class Book extends LoanItems{
         this.pages = pages;
     }
 
-    //getPages metode til at retunere antallet af sider
+    //getPages metode til at returnere antallet af sider
     public int getPages(){return pages;}
 
     //Overrid toString metoden for at få antal sider med
