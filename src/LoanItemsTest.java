@@ -20,24 +20,34 @@ public class LoanItemsTest {
         System.out.println();
 
         LoanItems[] Items = new LoanItems[numberOfItems];
-        for (int i = 0; i <numberOfItems; i++){
-            System.out.println("Enter name of title " + (i+1));
+        for (int i = 0; i <numberOfItems; i++) {
+            System.out.print("Enter name of title of item " + (i + 1) + ": ");
             String name = sc.nextLine();
 
-            System.out.println("Enter type of item (Video/Book) ");
-            String type = sc.nextLine();
+            boolean valid = false;
+            while(!valid) {
+                System.out.print("Enter type of item (Video/Book): ");
+                String type = sc.nextLine();
+                if (type.equalsIgnoreCase("Book")) {
+                    System.out.print("Enter number of pages in the book: ");
+                    int pages = sc.nextInt();
+                    sc.nextLine();
+                    Items[i] = new Book(name, type, pages);
+                    valid = true;
 
-            if(type.equalsIgnoreCase("Book")) {
-                System.out.println("Enter number of pages in the book ");
-                int pages = sc.nextInt();
-                sc.nextLine();
+                } else if (type.equalsIgnoreCase("Video")) {
+                    System.out.print("Enter length of video (In minutes): ");
+                    int length = sc.nextInt();
+                    sc.nextLine();
+                    Items[i] = new Video(name, type, length);
+                    valid = true;
+                    break;
 
-                Items[i] = new Book(name, type, pages);
-            }else if(type.equalsIgnoreCase("Video")){
-                System.out.println("Enter length of video (In minutes) ");
-                int length = sc.nextInt();
-                sc.nextLine();
-                Items[i]= new Video (name, type, length);
+                } else {
+                    System.out.println("You did not enter in book or video");
+                    System.out.println("Try again");
+                    valid = false;
+                }
             }
         }
         System.out.println("List of loan items:");
@@ -45,7 +55,7 @@ public class LoanItemsTest {
 
         System.out.println("ID\tTYPE\tTITLE");
         for(int i = 0; i < Items.length; i++){
-            System.out.println((i + 1) + "\t" + Items.toString());
+            System.out.println((i + 1) + "\t" + Items[i].toString());
         }
     }
 }

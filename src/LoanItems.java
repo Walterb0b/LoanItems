@@ -23,6 +23,6 @@ public class LoanItems {
     //toString metode til at vise title og type på vores item
     @Override
     public String toString(){
-        return "\t" + getType() + "\t" + getTitle();
+        return getType() + "\t" + getTitle();
     }
 }
