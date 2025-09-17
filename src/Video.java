@@ -9,4 +9,10 @@ public class Video extends LoanItems{
 
     //Metode til at returnere længden af vores video
     public int getLength() {return length;}
+
+    @Override
+    public String toString() {
+        return super.toString()+ getLength();
+
+    }
 }
