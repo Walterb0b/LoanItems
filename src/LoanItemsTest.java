@@ -8,8 +8,9 @@ public class LoanItemsTest {
     //Metode til vores loan items
     public static void LoanItems() {
         Scanner sc = new Scanner(System.in);
-        int numberOfItems;
-        //Checker om inputtet er valid fra brugeren
+        int numberOfItems; //Integer til at bestemme antallet af items brugeren vil låne
+
+        //Checker om inputtet er en integer som er positiv, ved hjælp af et do while loop
         do {
             System.out.print("How many items would you like to register: ");
             while (!sc.hasNextInt()) {
@@ -25,17 +26,19 @@ public class LoanItemsTest {
 
         System.out.println();
 
+        //Vi laver et array med antallet af vores loan items
         LoanItems[] Items = new LoanItems[numberOfItems];
         for (int i = 0; i < numberOfItems; i++) {
-            System.out.print("Enter name of title of item " + (i + 1) + ": ");
+            System.out.print("Enter the title of item " + (i + 1) + ": ");
             String name = sc.nextLine();
-
+            //Vi laver en boolean der bruges til at tjekke om inputtet fra brugeren er book eller video
             boolean valid = false;
             while (!valid) {
                 System.out.print("Enter type of item (Video/Book): ");
                 String type = sc.nextLine();
                 if (type.equalsIgnoreCase("Book")) {
-                    int pages;
+                    int pages; //Antal af sider i vores book
+                    //Checker om inputtet er en integer som er positiv, ved hjælp af et do while loop
                     do {
                         System.out.print("Enter number of pages in the book: ");
                         while (!sc.hasNextInt()) {
@@ -50,7 +53,8 @@ public class LoanItemsTest {
                     } while (pages <= 0);
 
                 } else if (type.equalsIgnoreCase("Video")) {
-                    int length;
+                    int length; //Længden af vores video
+                    //Checker om inputtet er en integer som er positiv, ved hjælp af et do while loop
                     do {
                         System.out.print("Enter the length of the video (in minutes): ");
                         while (!sc.hasNextInt()) {
@@ -71,6 +75,8 @@ public class LoanItemsTest {
                 }
             }
         }
+        //Vi laver en fin oversigt over alle vores loan items ved brug af et for loop og toString() metoden
+        System.out.println();
         System.out.println("List of loan items:");
         System.out.println("-------------------");
 
