@@ -29,6 +29,11 @@ public class LoanItemsTest {
                 int pages = sc.nextInt();
 
                 Items[i] = new Book(name, type, pages);
+            }else if(type.equalsIgnoreCase("Video ")){
+                System.out.println("Enter lenght of video (In minutes) ");
+                int length = sc.nextInt();
+                Items[i]= new Video (name, type, length);
+
             }
         }
 
