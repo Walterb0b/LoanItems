@@ -30,17 +30,22 @@ public class LoanItemsTest {
             if(type.equalsIgnoreCase("Book")) {
                 System.out.println("Enter number of pages in the book ");
                 int pages = sc.nextInt();
+                sc.nextLine();
 
                 Items[i] = new Book(name, type, pages);
-            }else if(type.equalsIgnoreCase("Video ")){
-                System.out.println("Enter lenght of video (In minutes) ");
+            }else if(type.equalsIgnoreCase("Video")){
+                System.out.println("Enter length of video (In minutes) ");
                 int length = sc.nextInt();
+                sc.nextLine();
                 Items[i]= new Video (name, type, length);
-
             }
         }
+        System.out.println("List of loan items:");
+        System.out.println("-------------------");
 
-
+        System.out.println("ID\tTYPE\tTITLE");
+        for(int i = 0; i < Items.length; i++){
+            System.out.println((i + 1) + "\t" + Items.toString());
+        }
     }
-
 }
