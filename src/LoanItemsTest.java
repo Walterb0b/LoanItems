@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class LoanItemsTest {
@@ -17,7 +18,19 @@ public class LoanItemsTest {
 
 
 
-        String[] Items = {};
+        LoanItems[] Items = new LoanItems[numberOfItems];
+        for (int i = 0; i <numberOfItems; i++){
+            System.out.println("Enter name of title " + (i+1));
+            String name = sc.nextLine();
+            System.out.println("Enter type of item (Video/Book) ");
+            String type = sc.nextLine();
+            if(type.equalsIgnoreCase("Book")) {
+                System.out.println("Enter number of pages in the book ");
+                int pages = sc.nextInt();
+
+                Items[i] = new Book(name, type, pages);
+            }
+        }
 
 
     }
