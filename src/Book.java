@@ -10,5 +10,9 @@ public class Book extends LoanItems{
     //getPages metode til at retunere antallet af sider
     public int getPages(){return pages;}
 
-
+    //Overrid toString metoden for at få antal sider med
+    @Override
+    public String toString(){
+        return getType() + "\t" + getTitle() + "\t" + getPages();
+    }
 }
