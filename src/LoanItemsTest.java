@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class LoanItemsTest {
@@ -22,9 +21,8 @@ public class LoanItemsTest {
             numberOfItems = sc.nextInt();
             sc.nextLine();
         } while (numberOfItems <= 0);
-        {
-            System.out.println("Noted that you would like to register " + numberOfItems + " items");
-        }
+
+        System.out.println("Noted that you would like to register " + numberOfItems + " items");
 
         System.out.println();
 
@@ -73,7 +71,6 @@ public class LoanItemsTest {
                 } else {
                     System.out.println("You did not enter in book or video");
                     System.out.println("Try again");
-                    valid = false;
                 }
             }
         }
